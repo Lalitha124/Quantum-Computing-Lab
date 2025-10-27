@@ -1,8 +1,7 @@
 # main.py
 
 from qiskit import QuantumRegister , ClassicalRegister , QuantumCircuit
-from qiskit_aer import StatevectorSimulator, QasmSimulator, AerSimulator
-import matplotlib.pyplot as plt
+from qiskit_aer import AerSimulator
 
 def main():
     print("Hello from quantum-computing-lab!")
@@ -20,9 +19,9 @@ def main():
     # M_simulator = QasmSimulator()
 
     # M_simulator = StatevectorSimulator()
-    M_simulator = AerSimulator()
+    Msimulator = AerSimulator()
 
-    job = M_simulator.run(qc,shots=1024)
+    job = Msimulator.run(qc,shots=1024)
     result = job.result()
     print(result.get_counts(qc))
 
